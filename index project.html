@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Court Hearing Scheduler</title>
+<style>
+  body { font-family: Arial, sans-serif; background-color: #f5f3ff; margin: 0; }
+  h1 { background-color: #7c3aed; color: white; text-align: center; margin: 0; padding: 22px; }
+  h2 { color: white; padding: 8px 14px; margin: 0 0 12px 0; }
+  div.box { background-color: white; margin: 18px auto; padding: 15px; width: 85%; border: 3px solid #7c3aed; }
+  table { width: 100%; border-collapse: collapse; }
+  th { color: white; padding: 8px; border: 1px solid gray; }
+  td { padding: 14px; border: 1px solid gray; }
+  input, select { padding: 6px; margin: 4px 0; }
+  .c1 { background-color: #7c3aed; }
+  .c2 { background-color: #0ea5e9; }
+  .c3 { background-color: #f59e0b; }
+  .c4 { background-color: #ec4899; }
+  .c5 { background-color: #ef4444; }
+  .c6 { background-color: #10b981; }
+  p.foot { background-color: #7c3aed; color: white; text-align: center; padding: 12px; margin: 0; }
+</style>
+</head>
+<body>
+
+<h1>Court Hearing Scheduler</h1>
+
+<!-- Cases -->
+<div class="box">
+  <h2 class="c1">1. Cases</h2>
+  <form>
+    Case No: <input type="text" placeholder="Example: CR-101"><br>
+    Case Title: <input type="text" placeholder="Example: State vs Sharma"><br>
+    Lawyer Name: <input type="text" placeholder="Example: Adv. Verma"><br>
+    <input type="submit" value="Add Case">
+  </form>
+  <br>
+  <table>
+    <tr class="c1"><th>Case No</th><th>Case Title</th><th>Lawyer</th></tr>
+    <tr><td>CR-101</td><td>State vs Sharma</td><td>Adv. Verma</td></tr>
+    <tr><td></td><td></td><td></td></tr>
+  </table>
+</div>
+
+<!-- Judges -->
+<div class="box">
+  <h2 class="c2">2. Judges</h2>
+  <form>
+    Judge Name: <input type="text" placeholder="Example: Justice Rao">
+    <input type="submit" value="Add Judge">
+  </form>
+  <br>
+  <table>
+    <tr class="c2"><th>Judge ID</th><th>Judge Name</th></tr>
+    <tr><td>J-01</td><td>Justice Rao</td></tr>
+    <tr><td></td><td></td></tr>
+  </table>
+</div>
+
+<!-- Courtrooms -->
+<div class="box">
+  <h2 class="c3">3. Courtrooms</h2>
+  <form>
+    Courtroom Name: <input type="text" placeholder="Example: Court Room 1">
+    <input type="submit" value="Add Courtroom">
+  </form>
+  <br>
+  <table>
+    <tr class="c3"><th>Room ID</th><th>Courtroom Name</th></tr>
+    <tr><td>R-01</td><td>Court Room 1</td></tr>
+    <tr><td></td><td></td></tr>
+  </table>
+</div>
+
+<!-- Hearing Slots -->
+<div class="box">
+  <h2 class="c4">4. Hearing Slots</h2>
+  <form>
+    Case: <select><option>Select Case</option></select><br>
+    Judge: <select><option>Select Judge</option></select><br>
+    Courtroom: <select><option>Select Courtroom</option></select><br>
+    Date: <input type="date"><br>
+    Time Slot:
+    <select>
+      <option>10:00 - 11:00</option>
+      <option>11:00 - 12:00</option>
+      <option>12:00 - 01:00</option>
+      <option>02:00 - 03:00</option>
+      <option>03:00 - 04:00</option>
+    </select><br>
+    Hearing Status:
+    <select>
+      <option>Scheduled</option>
+      <option>Ongoing</option>
+      <option>Completed</option>
+      <option>Adjourned</option>
+    </select><br>
+    <input type="submit" value="Schedule Hearing">
+  </form>
+</div>
+
+<!-- Conflict Detection -->
+<div class="box">
+  <h2 class="c5">5. Conflict Detection</h2>
+  <p>Hearing will not be scheduled if, at the same date and time:</p>
+  <ul>
+    <li>The judge is already assigned to another hearing.</li>
+    <li>The courtroom is already booked.</li>
+    <li>The lawyer is busy in another case.</li>
+    <li>The same case already has a hearing.</li>
+  </ul>
+</div>
+
+<!-- Schedule View -->
+<div class="box">
+  <h2 class="c6">6. Schedule View</h2>
+  <table>
+    <tr class="c6"><th>Date</th><th>Time Slot</th><th>Case</th><th>Lawyer</th><th>Judge</th><th>Courtroom</th><th>Status</th></tr>
+    <tr><td>25-11-2026</td><td>10:00 - 11:00</td><td>CR-101</td><td>Adv. Verma</td><td>Justice Rao</td><td>Court Room 1</td><td>Scheduled</td></tr>
+    <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+  </table>
+</div>
+
+<p class="foot">Team Code Strike | Hariom Yadav (12624282) | 12626237</p>
+
+</body>
+</html>
